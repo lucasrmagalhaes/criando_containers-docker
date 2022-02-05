@@ -30,7 +30,16 @@ Docker - A tecnologia de containers
 
 Tecnologias de containers para prover ferramentas modernas para deployar e rodar aplicações.
 
+Docker Engine: Tecnologia mais famosa e responsável por fazer o meio de campo entre os containers e o SO. <br>
 Docker Compose: Um jeito fácil de definir e orquestrar múltiplos containers. <br>
 Docker Swarm: Uma ferramenta para colocar múltiplos Dockers Host's para trabalharem juntos em cluster. <br>
 Docker Hub: Um repositório com mais de 250 mil imagens diferentes para os seus containers. <br>
 Docker Machine: Uma ferramenta que nos permite instalar e configurar em host virtuais.
+
+```
+docker version
+```
+
+```
+docker run hello-world
+```
