@@ -88,3 +88,30 @@ Acessar o container no modo interativo
 ```
 docker start -a -i container_id
 ```
+
+Remover um container
+```
+docker rm container_id
+```
+
+Remover containers inativos
+```
+docker container prune
+```
+
+Listar imagens
+```
+docker images
+```
+
+Remover imagem
+```
+docker rmi nome_imagem
+```
+
+Baixar uma imagem com a versão informada
+```
+docker run ubuntu:14.04
+```
+
+[Layer de Scrita]()
