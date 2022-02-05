@@ -36,13 +36,55 @@ Tecnologias de containers para prover ferramentas modernas para deployar e rodar
 **Docker Hub:** Um repositório com mais de 250 mil imagens diferentes para os seus containers. <br>
 **Docker Machine:** Uma ferramenta que nos permite instalar e configurar em host virtuais.
 
+Exibe a versão do docker.
 ```
 docker version
 ```
 
+Cria um container com a respectiva imagem passada como parâmetro.
 ```
 docker run hello-world
 ```
 
 [Play With Docker](https://labs.play-with-docker.com/) <br>
-Ao acessar o site basta clicar em +Add New Instance e começar a utilizá-lo como estivesse usando sua máquina normalmente.
+Basta clicar em +Add New Instance e começar a utilizá-lo como estivesse usando sua máquina normalmente.
+
+```
+docker run ubuntu
+```
+
+Lista todos os containers.
+```
+docker ps -a
+```
+
+```
+docker run ubuntu echo "Olá Mundo"
+```
+
+Dentro do Container, consegue rodar comandos nativos da Imagem do Container.
+```
+docker run -it ubuntu
+```
+
+Lista só os containers ativos.
+```
+docker ps
+```
+
+exit ou Ctrl + d -> Sai do container.
+
+Iniciar o container
+```
+docker start container_id
+```
+
+Parar o container
+```
+docker stop container_id
+```
+
+Acessar o container no modo interativo
+```
+docker start -a -i container_id
+```
