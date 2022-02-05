@@ -43,3 +43,6 @@ docker version
 ```
 docker run hello-world
 ```
+
+[Play With Docker](https://labs.play-with-docker.com/)
+Ao acessar o site basta clicar em +Add New Instance e começar a utilizá-lo como estivesse usando sua máquina normalmente.
