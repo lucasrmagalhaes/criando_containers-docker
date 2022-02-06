@@ -206,3 +206,20 @@ touch novo-arquivo.txt
 echo "Este arquivo foi criado dentro de um volume" > novo-arquivo.txt
 ```
 
+**Por que usamos volumes?** <br>
+Muitas vezes removemos os containers após o uso. Volumes são usados para os dados que não devem ser removidos. <br>
+É muito comum usar o container e apagá-lo após seu uso. Dessa forma também são removidos os dados desse container e aí entram os volumes que permitem salvar dados fora do container.
+
+**Um volume fica salvo:** No Docker Host <br>
+Fica salvo no computador onde a Docker Engine está rodando.
+
+
+Informando o caminho e rodando o projeto - CAMINHO_HOST:CAMINHO_CONTAINER
+```
+docker run -d -p 8080:3000 -v "C:\Users\Lucas\Desktop\volume-exemplo:/var/www" -w "/var/www" node npm start
+```
+
+Dentro da pasta e rodando o projeto
+```
+docker run -d -p 8080:3000 -v "$(pwd):/var/www" -w "/var/www" node npm start
+```
