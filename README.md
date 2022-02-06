@@ -114,4 +114,65 @@ Baixar uma imagem com a versão informada
 docker run ubuntu:14.04
 ```
 
+**Layered File System** <br>
+Toda imagem que baixamos é composta de uma ou mais camadas. <br>
+Essas camadas podem ser reaproveitadas em outras imagens, acelerando assim o tempo de download.
+
 [Layer de Scrita]()
+
+Imagem não oficiais, criado por pessoas, informar o username/imagem
+```
+docker run dockersamples/static-site
+```
+
+-d -> detect, roda em background, liberando o terminal
+```
+docker run -d dockersamples/static-site
+```
+
+-t -> tempo, padrão é 10 segundos
+```
+docker stop -t 0 container_id
+```
+
+-P -> container atribui a porta aleatória
+```
+docker run -d -P dockersamples/static-site
+```
+
+Verificar a porta
+```
+docker port container_id
+```
+
+Definir um nome para o container
+```
+docker run -d -P --name meu-site dockersamples/static-site
+```
+
+Parar o container pelo o nome
+```
+docker stop -t 0 meu-site
+```
+
+Definir a porta que o container vai rodar - localhost:12345
+```
+docker run -d -p 12345:80 dockersamples/static-site
+```
+
+- e -> Variável de Ambiente
+```
+docker run -d -P -e AUTHOR="Lucas Magalhães" dockersamples/static-site
+```
+
+-q -> Retorna os IDs
+```
+docker ps -q
+```
+
+Para os containers com um comando só, útil para parar vários containers
+```
+docker stop -t 0 $(docker ps -q)
+```
+
+
