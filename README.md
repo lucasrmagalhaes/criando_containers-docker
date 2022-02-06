@@ -174,3 +174,35 @@ Para os containers com um comando só, útil para parar vários containers
 ```
 docker stop -t 0 $(docker ps -q)
 ```
+
+**Containers são voláteis:** Aonde salvar o código? Logs? Dados? Nos volumes! <br>
+/var/www -> Docker Host
+
+-v -> Especifica o caminho
+```
+docker run -v "/var/www" ubuntu
+```
+
+Informações do container
+```
+docker inspect container_id
+```
+
+Mounts -> Source -> Informa onde está salvando os dados localmente.
+
+```
+docker run -it -v "C:\Users\Lucas\Desktop:/var/www" ubuntu
+```
+
+```
+cd var/www/
+```
+
+```
+touch novo-arquivo.txt
+```
+
+```
+echo "Este arquivo foi criado dentro de um volume" > novo-arquivo.txt
+```
+
