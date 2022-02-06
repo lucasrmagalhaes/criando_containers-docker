@@ -118,7 +118,7 @@ docker run ubuntu:14.04
 Toda imagem que baixamos é composta de uma ou mais camadas. <br>
 Essas camadas podem ser reaproveitadas em outras imagens, acelerando assim o tempo de download.
 
-[Layer de Scrita](https://github.com/lucasrmagalhaes/criando_containers-docker/blob/main/img/layer_de_escrita.png?raw=true)
+![Layer de Scrita](https://user-images.githubusercontent.com/43296467/152704905-91b18bb0-0ad7-4970-ab3e-9c32371f5aee.png)
 
 Imagem não oficiais, criado por pessoas, informar o username/imagem
 ```
