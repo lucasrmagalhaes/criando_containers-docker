@@ -118,7 +118,7 @@ docker run ubuntu:14.04
 Toda imagem que baixamos é composta de uma ou mais camadas. <br>
 Essas camadas podem ser reaproveitadas em outras imagens, acelerando assim o tempo de download.
 
-[Layer de Scrita]()
+[Layer de Scrita](https://github.com/lucasrmagalhaes/criando_containers-docker/blob/main/img/layer_de_escrita.png?raw=true)
 
 Imagem não oficiais, criado por pessoas, informar o username/imagem
 ```
@@ -174,5 +174,3 @@ Para os containers com um comando só, útil para parar vários containers
 ```
 docker stop -t 0 $(docker ps -q)
 ```
-
-
