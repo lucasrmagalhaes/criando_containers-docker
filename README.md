@@ -258,3 +258,35 @@ Baixando a imagem
 ```
 docker pull lucasrmagalhaes/node
 ```
+
+Verificar o ip da máquina
+```
+hostname -i
+```
+
+Ativando o comando ping no Ubuntu
+```
+apt-get update && apt-get install -y iputils-ping
+```
+
+Criando uma rede
+```
+docker network create --driver bridge minha-rede
+```
+
+Listando as redes
+```
+docker network ls
+```
+
+```
+docker run -it --name meu-container-de-ubuntu --network minha-rede ubuntu
+```
+
+```
+docker run -it --name meu-segundo-container-de-ubuntu --network minha-rede ubuntu
+```
+
+```
+ping meu-container-de-ubuntu
+```
