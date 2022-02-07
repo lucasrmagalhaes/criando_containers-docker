@@ -223,3 +223,23 @@ Dentro da pasta e rodando o projeto
 ```
 docker run -d -p 8080:3000 -v "$(pwd):/var/www" -w "/var/www" node npm start
 ```
+
+Build
+```
+docker build -f node.dockerfile -t lucasrmagalhaes/node .
+```
+
+Listando imagens
+```
+docker images
+```
+
+Remove e força o stop
+```
+docker rm -f container_id
+```
+
+Rodando a imagem criada
+```
+docker run -d -p 8080:3000 lucasrmagalhaes/node
+```
