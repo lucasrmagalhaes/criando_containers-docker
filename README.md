@@ -243,3 +243,18 @@ Rodando a imagem criada
 ```
 docker run -d -p 8080:3000 lucasrmagalhaes/node
 ```
+
+Login do Docker HUB
+```
+docker login
+```
+
+Subindo a imagem
+```
+docker push lucasrmagalhaes/node
+```
+
+Baixando a imagem
+```
+docker pull lucasrmagalhaes/node
+```
