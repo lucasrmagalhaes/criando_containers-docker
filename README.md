@@ -314,3 +314,7 @@ Salva os livros no banco
 ```
 http://localhost:8080/seed
 ```
+
+**Subir 5 containers na mão?** Não! <br>
+Docker Compose salva nossa vida! <br>
+docker-compose.yml
