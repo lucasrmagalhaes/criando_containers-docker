@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: 
+      dockerfile: ./docker/nginx.dockerfile
+      context: .
+    image: lucasrmagalhaes/nginx
+    container_name: nginx
+    port: "80:80"
+    networks: production-network
+    depends_on: 
+      - "node1"
+      - "node2"
+      - "node3"
+  
+  mongodb:
+    image: mongo
+    networks: production-network
+
+  node1:
+    build:
+      dockerfile: ./docker/node.dockerfile
+      context: .
+    image: lucasrmagalhaes/alura-books
+    container_name: alura-books1
+    port: "3000"
+    networks: production-network
+    depends_on: "mongodb"
+  
+  node2:
+    build:
+      dockerfile: ./docker/node.dockerfile
+      context: .
+    image: lucasrmagalhaes/alura-books
+    container_name: alura-books2
+    port: "3000"
+    networks: production-network
+    depends_on: "mongodb"
+  
+  node3:
+    build:
+      dockerfile: ./docker/node.dockerfile
+      context: .
+    image: lucasrmagalhaes/alura-books
+    container_name: alura-books3
+    port: "3000"
+    networks: production-network
+    depends_on: "mongodb"
+
+networks:
+  production-network:
+    driver: bridge
