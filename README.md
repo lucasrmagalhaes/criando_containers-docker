@@ -290,3 +290,27 @@ docker run -it --name meu-segundo-container-de-ubuntu --network minha-rede ubunt
 ```
 ping meu-container-de-ubuntu
 ```
+
+```
+docker pull douglasq/alura-books:cap05
+```
+
+```
+docker pull mongo
+```
+
+Startando o mongo
+```
+docker run -d --name meu-mongo --network minha-rede mongo
+```
+
+Startando o projeto
+```
+docker run --network minha-rede --name alura-books -d -p 8080:3000 douglasq/alura-books:cap05
+```
+
+Salva os livros no banco
+```
+http://localhost:8080/seed
+```
+
