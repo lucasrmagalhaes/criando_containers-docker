@@ -7,8 +7,10 @@ services:
       context: .
     image: lucasrmagalhaes/nginx
     container_name: nginx
-    port: "80:80"
-    networks: production-network
+    ports: 
+      - "80:80"
+    networks: 
+      - production-network
     depends_on: 
       - "node1"
       - "node2"
@@ -16,37 +18,48 @@ services:
   
   mongodb:
     image: mongo
-    networks: production-network
+    container_name: mongodb
+    networks: 
+      - production-network
 
   node1:
     build:
       dockerfile: ./docker/node.dockerfile
       context: .
     image: lucasrmagalhaes/alura-books
-    container_name: alura-books1
-    port: "3000"
-    networks: production-network
-    depends_on: "mongodb"
+    container_name: alura-books-1
+    ports: 
+      - "3000"
+    networks: 
+      - production-network
+    depends_on: 
+      - "mongodb"
   
   node2:
     build:
       dockerfile: ./docker/node.dockerfile
       context: .
     image: lucasrmagalhaes/alura-books
-    container_name: alura-books2
-    port: "3000"
-    networks: production-network
-    depends_on: "mongodb"
+    container_name: alura-books-2
+    ports: 
+      - "3000"
+    networks: 
+      - production-network
+    depends_on: 
+      - "mongodb"
   
   node3:
     build:
       dockerfile: ./docker/node.dockerfile
       context: .
     image: lucasrmagalhaes/alura-books
-    container_name: alura-books3
-    port: "3000"
-    networks: production-network
-    depends_on: "mongodb"
+    container_name: alura-books-3
+    ports: 
+      - "3000"
+    networks: 
+      - production-network
+    depends_on: 
+      - "mongodb"
 
 networks:
   production-network:

@@ -318,3 +318,36 @@ http://localhost:8080/seed
 **Subir 5 containers na mão?** Não! <br>
 Docker Compose salva nossa vida! <br>
 docker-compose.yml
+
+Buildar
+```
+docker-compose build
+```
+
+Rodar os containers
+```
+docker-compose up
+```
+
+Rodar em background
+```
+docker-compose up -d
+```
+
+Listar os serviços
+```
+docker-compose ps
+```
+
+Para e remove
+```
+docker-compose down
+```
+
+```
+docker exec -it alura-books-1 ping alura-books-2
+```
+
+```
+docker-compose restart
+```
