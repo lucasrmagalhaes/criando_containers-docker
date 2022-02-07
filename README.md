@@ -125,7 +125,7 @@ Imagem não oficiais, criado por pessoas, informar o username/imagem
 docker run dockersamples/static-site
 ```
 
--d -> detect, roda em background, liberando o terminal
+-d -> detached, roda em background, liberando o terminal
 ```
 docker run -d dockersamples/static-site
 ```
@@ -257,4 +257,60 @@ docker push lucasrmagalhaes/node
 Baixando a imagem
 ```
 docker pull lucasrmagalhaes/node
+```
+
+Mostra o ip atribuído ao container pelo docker (funciona apenas dentro do container)
+```
+hostname -i
+```
+
+Ativando o comando ping no Ubuntu
+```
+apt-get update && apt-get install -y iputils-ping
+```
+
+Cria uma rede especificando o driver desejado
+```
+docker network create --driver bridge minha-rede
+```
+
+Listando as redes
+```
+docker network ls
+```
+
+Cria um container especificando seu nome e qual rede deverá ser usada
+```
+docker run -it --name meu-container-de-ubuntu --network minha-rede ubuntu
+```
+
+```
+docker run -it --name meu-segundo-container-de-ubuntu --network minha-rede ubuntu
+```
+
+```
+ping meu-container-de-ubuntu
+```
+
+```
+docker pull douglasq/alura-books:cap05
+```
+
+```
+docker pull mongo
+```
+
+Startando o mongo
+```
+docker run -d --name meu-mongo --network minha-rede mongo
+```
+
+Startando o projeto
+```
+docker run --network minha-rede --name alura-books -d -p 8080:3000 douglasq/alura-books:cap05
+```
+
+Salva os livros no banco
+```
+http://localhost:8080/seed
 ```
